@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def convolution(h,x):
+
+    #Folding h
+    fh = np.flip(h)
+
+    #Arreglo de respuesta a la convolucion
+    rc = np.zeros(h.size + x.size - 1)
+
+    #Copia señal original con ceros al inicio y al final
+    cx = np.insert(x,0, np.zeros(h.size -1)) #Ceros al inicio
+    cx = np.insert(cx, cx.size, np.zeros(h.size-1))
+
+    #Ciclos for para las variables n y k
+    for n in np.arange(0, rc.size):
+        for k in np.arange(0,h.size):
+            idcx = k + n
+            print(idcx )
+
+h = np.array([1,-1])
+x = np.array([1])
+
+
+
+convolution(h,x)
