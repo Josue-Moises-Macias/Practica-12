@@ -17,11 +17,15 @@ def convolution(h,x):
     for n in np.arange(0, rc.size):
         for k in np.arange(0,h.size):
             idcx = k + n
-            print(idcx )
+            rc[n] = rc[n] + fh[k]*cx[idcx]
+
+
+    return rc
 
 h = np.array([1,-1])
 x = np.array([1])
 
 
 
-convolution(h,x)
+print (convolution(h,x))
+print(np.convolve(h,x))
